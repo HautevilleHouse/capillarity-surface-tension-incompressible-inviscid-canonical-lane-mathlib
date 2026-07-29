@@ -1,0 +1,9 @@
+import capillarity_surface_tension_incompressible_inviscid_canonical_lane_mathlib.GateLemmas
+namespace HautevilleHouse
+namespace capillarity_surface_tension_incompressible_inviscid_canonical_lane_mathlib
+structure ConstrainedTheoremClosure where
+  admissible :: intro :: constraint :: consequence :: proof ::
+theorem canonical : ConstrainedTheoremClosure :=
+  ConstrainedTheoremClosure.intro
+end capillarity_surface_tension_incompressible_inviscid_canonical_lane_mathlib
+end HautevilleHouse

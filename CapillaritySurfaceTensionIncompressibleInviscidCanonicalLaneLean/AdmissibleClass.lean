@@ -1,0 +1,26 @@
+import HautevilleHouse.CapillaritySurfaceTensionIncompressibleInviscid.CapillaritySurfaceTension
+import HautevilleHouse.CapillaritySurfaceTensionIncompressibleInviscid.EulerEquation
+import HautevilleHouse.CapillaritySurfaceTensionIncompressibleInviscid.FreeBoundary
+import HautevilleHouse.CapillaritySurfaceTensionIncompressibleInviscid.WellPosedness
+import HautevilleHouse.CapillaritySurfaceTensionIncompressibleInviscid.GravityWave
+
+namespace HautevilleHouse
+namespace CapillaritySurfaceTensionIncompressibleInviscid
+
+structure AdmissibleClass where
+  capillarity : CapillaritySurfaceTensionPackage
+  capillarityEvidence : CapillaritySurfaceTensionEvidence capillarity
+  euler : EulerEquationPackage capillarity
+  eulerEvidence : EulerEquationEvidence capillarity euler
+  freeBoundary : FreeBoundaryPackage euler
+  freeBoundaryEvidence : FreeBoundaryEvidence freeBoundary
+  wellPosedness : WellPosednessPackage freeBoundary
+  wellPosednessEvidence : WellPosednessEvidence wellPosedness
+  gravityWave : GravityWavePackage freeBoundary
+  gravityWaveEvidence : GravityWaveEvidence gravityWave
+  endpointSatisfied : Prop
+  remainderRecorded : Prop
+  gateWitness : endpointSatisfied ∨ remainderRecorded
+
+end CapillaritySurfaceTensionIncompressibleInviscid
+end HautevilleHouse
